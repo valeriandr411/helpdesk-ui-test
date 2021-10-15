@@ -8,10 +8,9 @@ public class LoginPage extends AbstractPage {
 
     // Обычный поиск элемента
     private WebElement user = driver.findElement(By.id("username"));
+    private WebElement loginButton = driver.findElement(By.xpath("//input[@class='btn btn-lg btn-primary btn-block']"));
 
     // Поиск элемента через аннотацию
-    //@FindBy(id = "password")
-   // private WebElement password;
     private WebElement password = driver.findElement(By.id("password"));
 
     // todo: остальные элементы страницы
@@ -20,6 +19,9 @@ public class LoginPage extends AbstractPage {
         // todo
         this.user.sendKeys(user);
         this.password.sendKeys(password);
-        driver.findElement(By.xpath("//input[@class='btn btn-lg btn-primary btn-block']")).click();
+    }
+
+    public WebElement getLoginButton() {
+        return loginButton;
     }
 }
